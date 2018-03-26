@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <title>Customer Data</title>
+    <meta charset = "utf-8">
+    <meta name="author" content="Miheer Lele">
+    <meta name="keywords" content="Carnegie Mellon University,Information Systems,Web Development Project">
+    <meta name="description" content="Miheer Lele Web Development">
+
+    <!-- External Links to CSS files -->
+    <link rel="stylesheet" media="all" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" media="all" type="text/css" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    
+
+
+
+</head>
+    <!-- I talked to Prof Q about using the Bootstrap Navbar -->
+    <body>
+        <div class="navbar navbar-inverse"> <!-- Bootstrap Navbar class -->
+            <div class="container"> <!-- Centers the contents --> 
+                <a class="navbar-brand logo-up" href="index.html"><img src="images/logo-small.png"></a>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="occasions.html">Special Occasions</a></li>
+                    <li><a href="findus.html">Find Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li class="active"><a href="employees.html">Customer Data</a></li>
+                </ul>
+            </div> <!-- Container -->
+        </div><!-- Navbar -->
+
+        <div id="hero-findus">
+            <div class="container">
+                <h2>Welcome Admin</h2>
+                <h3>Here is your latest customer data</h3>
+                <div id="container-graph3"></div>
+                <br/>
+                <h3>Most Popular Bakery Items by Store</h3>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h5>Shadyside</h5>
+                        <ol>
+                            <li>Burnt Almond Torte</li>
+                            <li>Cronut</li>
+                            <li>Almond Coffee Cake</li>
+                        </ol>
+                    </div>
+                    <div class="col-sm-6">
+                        <h5>Downtown</h5>
+                        <ol>
+                            <li>Burnt Almond Torte</li>
+                            <li>Apple Pie</li>
+                            <li>Raspberry Jelly Puff</li>
+                        </ol>
+                    </div><!-- Col -->
+                </div><!-- Row -->
+                <br/>
+                <h3>Sales</h3>
+                <div id="container-graph4"></div>
+                <br/>
+            </div><!-- Container -->
+        </div><!-- Admin -->
+
+    
+
+
+    </body>
+    <!-- External Javascript Links -->
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script type="text/javascript">
+    $(function(){
+        $("#container-graph3").highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: 'Most Popular Bakery Items'
+            },
+            subtitle:{
+                text: "Feburary 2018"
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                        style: {
+                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        }
+                    }
+                }
+            },
+            series: [{
+                name: 'Percent of Sales',
+                colorByPoint: true,
+                data: [{
+                        name: 'Burnt Almond Torte',
+                        y: 35.88,
+                        sliced: true,
+                        selected: true
+                    }, {
+                        name: 'Apple Pie',
+                        y: 24.71
+                    }, {
+                        name: 'Cronut',
+                        y: 13.42
+                    }, {
+                        name: 'Raspberry Jelly Puff',
+                        y: 7.12
+                    }, {
+                        name: 'Coconut Macaroon',
+                        y: 5.11
+                    }, {
+                        name: 'Almond Coffee Cake',
+                        y: 4.20
+                    }, {
+                        name: 'Toasted Almond Gobs',
+                        y: 4.18
+                    }, {
+                        name: 'Marble Cake',
+                        y: 3.36
+                    }, {
+                        name: 'Cinnamon Bread',
+                        y: 2.02
+                    }]
+                }]
+            });
+        });
+    </script>
+    <script type="text/javascript">
+    $(function(){
+        $("#container-graph4").highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: 'Sales by Outlet'
+            },
+            subtitle:{
+                text: "Feburary 2018"
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                        style: {
+                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        }
+                    }
+                }
+            },
+            series: [{
+                name: 'Sales',
+                colorByPoint: true,
+                data: [{
+                        name: 'Shadyside',
+                        y: 47.88,
+                        sliced: true,
+                        selected: true
+                    }, {
+                        name: 'Downtown',
+                        y: 32.49
+                    }, {
+                        name: 'Online',
+                        y: 19.63
+                    }]
+                }]
+            });
+        });
+    </script>
+
+
+</html>

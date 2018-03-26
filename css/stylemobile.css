@@ -1,0 +1,26 @@
+@media screen and (max-width: 480px){
+    #hero-home {
+        /* background-image: url("../images/mobilebackground1.jpg"); */
+        background-image: url("../images/mobilebackground1.jpg");
+        min-height: 250px;
+    }
+
+    .navbar img{
+        display: none;
+    }
+
+    .container h1{
+        font-size: 36px;
+        margin-top: 40%;
+    }
+
+    .about{
+        width: 100%
+    }
+
+    .slideshow{
+        max-width: 100%;
+        width: 100%;
+        margin-top: 20px;
+    }
+}

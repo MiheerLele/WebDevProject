@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <title>Order a Torte</title>
+    <meta charset = "utf-8">
+    <meta name="author" content="Miheer Lele">
+    <meta name="keywords" content="Carnegie Mellon University,Information Systems,Web Development Project">
+    <meta name="description" content="Miheer Lele Web Development">
+
+    <!-- External Links to CSS files -->
+    <link rel="stylesheet" media="all" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" media="all" type="text/css" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+</head>
+    <!-- I talked to Prof Q about using the Bootstrap Navbar -->
+    <body>
+        <div class="navbar navbar-inverse"> <!-- Bootstrap Navbar class -->
+            <div class="container"> <!-- Centers the contents --> 
+                <a class="navbar-brand logo-up" href="index.html"><img src="images/logo-small.png"></a>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="occasions.html">Special Occasions</a></li>
+                    <li><a href="findus.html">Find Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div> <!-- Container -->
+        </div><!-- Navbar -->
+
+        <div id="hero-findus">
+            <div class="container">
+                <h2>Order a Torte</h2>
+                <!-- Classes taken from https://getbootstrap.com/docs/4.0/components/forms/ -->
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-sm-12">
+                            <img src="images/required.png">
+                            <label>Required</label>
+                        </div><!-- Col -->
+                    </div><!-- Row -->
+                    <div class="form-row">
+                        <div class="form-group col-sm-6">
+                            <img src="images/required.png">
+                            <label>First Name</label>
+                            <input type="text" name="firstname" placeholder="John" class="form-control" required>
+                        </div><!-- Col -->
+                        <div class="form-group col-sm-6">
+                            <img src="images/required.png">
+                            <label>Last Name</label>
+                            <input type="text" name="lastname" class="form-control" placeholder="Smith" required>
+                        </div>
+                    </div><!-- Row -->
+                    <div class="form-row">
+                        <div class="form-group col-sm-6">
+                            <img src="images/required.png">
+                            <label>Address</label>
+                            <input type="text" class="form-control" placeholder="1234 Main St" required>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <img src="images/required.png">
+                            <label>Address 2</label>
+                            <input type="text" class="form-control" placeholder="Apartment, studio, or floor" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-sm-8">
+                            <img src="images/required.png">
+                            <label>City</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="form-group col-sm-2">
+                            <img src="images/required.png">
+                            <label>State</label>
+                            <select class="form-control" required>
+                                <option selected>Choose...</option>
+                                <option>Pennsylvania</option>
+                                <option>New York</option>
+                                <option>Ohio</option>
+                                <option>Virginia</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-sm-2">
+                            <img src="images/required.png">
+                            <label>Zip</label>
+                            <input type="text" pattern="[0-9]{5}" name="zipcode" placeholder="#####" maxlength="5" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-sm-6">
+                            <img src="images/required.png">
+                            <label>Email</label>
+                            <input type="email" name="email" class="form-control" placeholder="abc@def.com" required>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <img src="images/required.png">
+                            <label>Phone Number</label>
+                            <input type="text" required class="form-control" placeholder="123-456-7890" name="phone" pattern="\d{3}[\-]\d{3}[\-]\d{4}">
+                            <!-- Pattern for phone number taken from http://html5pattern.com/Phones -->
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-sm-3">
+                            <img src="images/required.png">
+                            <label>Quantity (8" x 3")</label>
+                            <select class="form-control" required>
+                                <option selected>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-sm-3">
+                            <img src="images/required.png">
+                            <label>Pickup Location</label>
+                            <select class="form-control" required>
+                                <option selected>Choose...</option>
+                                <option>Shadyside</option>
+                                <option>Downtown</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-sm-3">
+                            <img src="images/required.png">
+                            <label>Pickup Date</label>
+                            <input type="date" class="form-control" required>
+                        </div>
+                        <div class="form-group col-sm-3">
+                            <img src="images/required.png">
+                            <label>Pickup Time</label>
+                            <input type="time" class="form-control" required placeholder="1435PM">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-sm-4">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div><br/>
+        </div>
+        <br/>
+
+
+        <footer>
+            <div class="container">
+                <!-- Icons from www.iconfinder.com -->
+                <a href="https://www.facebook.com/PrantlsBakery" target="_blank"><img src="images/facebook.png"></a>
+                <a href="https://twitter.com/prantlsbakery" target="_blank"><img src="images/twitter.png"></a>
+                <a href="https://www.instagram.com/prantls_bakery/" target="_blank"><img src="images/instagram.png"></a>
+                <a href="https://www.yelp.com/biz/prantls-bakery-pittsburgh" target="_blank"><img src="images/yelp.png"></a>
+                <a href="contact.html"><img src="images/email.png"></a>
+            </div>
+
+        </footer>
+    
+
+
+    </body>
+
+    <!-- External Javascript Links -->
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+
+</html>
